@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Asim Chandio - Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        .navbar {
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            padding: 1.5rem;
+            color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-family: "Playfair Display", serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: bounceIn 1.5s ease-out;
+        }
+
+        .credit {
+            font-size: 1rem;
+            color: #ffeb3b;
+            margin-top: 0.5rem;
+            font-style: italic;
+            transition: color 0.3s ease;
+        }
+
+        .credit:hover {
+            color: #ff4081;
+        }
+
+        .nav-links {
+            margin-top: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: linear-gradient(45deg, #ff4081, #ff8a80);
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a:hover {
+            background: linear-gradient(45deg, #d81b60, #ef5350);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            color: #ffeb3b;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #ffeb3b;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #4caf50;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #1e88e5, #64b5f6);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-section h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            font-family: "Playfair Display", serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin: 2rem auto;
+            max-width: 800px;
+            color: #e0f7ff;
+            transition: color 0.3s ease;
+        }
+
+        .hero-description:hover {
+            color: #ffeb3b;
+        }
+
+        .tribute-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            border-left: 4px solid #ff4081;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 0.5; transform: scale(1.05); }
+            70% { opacity: 0.7; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .section {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .section h2 {
+            font-family: "Poppins", sans-serif;
+            font-size: 2rem;
+            color: #ff4081;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            animation: bounceIn 1s ease-out;
+        }
+
+        /* Gallery Styling */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+            justify-items: center;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 320px;
+            height: 240px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+            padding: 10px;
+            border: 3px solid #2196F3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 8px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        .gallery-item::after {
+            content: attr(data-caption);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: #ffeb3b;
+            padding: 0.5rem;
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        /* Video Section Styling */
+        .video-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+            justify-items: center;
+        }
+
+        .video-item {
+            position: relative;
+            width: 320px;
+            height: 240px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+            padding: 10px;
+            border: 3px solid #2196F3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .video-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 8px;
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        .video-item::after {
+            content: attr(data-caption);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: #ffeb3b;
+            padding: 0.5rem;
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img, .modal-content video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Changed to contain to show entire content */
+            object-position: center;
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Upload Section Styling */
+        .upload-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+
+        .upload-section h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .upload-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .file-input-wrapper input[type="file"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .file-input-label {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(45deg, #ff4081, #ff8a80);
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+            text-align: center;
+            font-weight: bold;
+            font-family: "Poppins", sans-serif;
+            z-index: 1;
+        }
+
+        .file-input-label:hover {
+            background: linear-gradient(45deg, #d81b60, #ef5350);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        .upload-section button {
+            padding: 0.8rem;
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .upload-section button:hover {
+            background: linear-gradient(45deg, #1976D2, #039be5);
+        }
+
+        /* Notes Section Styling */
+        .notes-section {
+            background: linear-gradient(135deg, #4caf50, #81c784);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+
+        .notes-section h2 {
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .notes-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .notes-section textarea {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 150px;
+            background: rgba(255,255,255,0.9);
+            font-family: "Times New Roman", Times, serif;
+            color: #333;
+        }
+
+        .notes-section button {
+            padding: 0.8rem;
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .notes-section button:hover {
+            background: linear-gradient(45deg, #1976D2, #039be5);
+        }
+
+        .note-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #ffeb3b;
+            position: relative;
+            color: #fff;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        /* Admin Section Styling */
+        .admin-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+
+        .admin-section h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .admin-section input {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-right: 1rem;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .admin-section button {
+            padding: 0.8rem;
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .admin-section button:hover {
+            background: linear-gradient(45deg, #1976D2, #039be5);
+        }
+
+        .admin-content {
+            display: none;
+            margin-top: 1.5rem;
+        }
+
+        .admin-content h3 {
+            margin: 1rem 0;
+            font-family: "Poppins", sans-serif;
+            color: #ff4081;
+            animation: bounceIn 1s ease-out;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: linear-gradient(45deg, #ff4081, #ff8a80);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 0.3rem 0.6rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .delete-btn:hover {
+            background: linear-gradient(45deg, #d81b60, #ef5350);
+        }
+
+        /* Back-to-Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            padding: 0.8rem 1rem;
+            border-radius: 50%;
+            text-decoration: none;
+            display: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: opacity 0.3s ease;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .back-to-top.show {
+            display: block;
+        }
+
+        /* File Item Styling */
+        .file-item {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            color: #2196F3;
+            font-family: "Times New Roman", Times, serif;
+            cursor: pointer;
+        }
+
+        .file-item a {
+            color: #ff4081;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .file-item a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .navbar h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links a {
+                margin: 0 0.5rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .gallery, .video-section {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item, .video-item {
+                width: 100%;
+                max-width: 320px;
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Muhammad Asim</h1>
+        <div class="credit">Website Created by Muhammad Asim Chandio</div>
+        <div class="nav-links">
+            <a href="#home" onclick="showSection('home')">Home</a>
+            <a href="#photos" onclick="showSection('photos')">Photos</a>
+            <a href="#videos" onclick="showSection('videos')">Videos</a>
+            <a href="#about" onclick="showSection('about')">About</a>
+            <a href="#upload" onclick="showSection('upload')">Upload</a>
+            <a href="#notes" onclick="showSection('notes')">Notes</a>
+            <a href="#admin" onclick="showSection('admin')">Admin</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <section id="home" class="section">
+            <div class="hero-section">
+                <h1>Welcome to Muhammad Asim's Official Website</h1>
+                <div class="hero-description">
+                    <p>Muhammad Asim Chandio is a unparalleled IT master, an exceptional educator, and a visionary mastermind who has redefined the landscape of technology and education. His profound expertise in IT, coupled with his extraordinary teaching prowess, has inspired countless individuals to excel in their careers and lives. A true innovator, his strategic thinking and relentless dedication have made him a beacon of inspiration for all.</p>
+                    
+                    <div class="tribute-quote">
+                        "Education is not just about teaching; it's about inspiring, guiding, and nurturing the potential within each student." - Muhammad Asim
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="photos" class="section" style="display: none;">
+            <h2>Photo Gallery</h2>
+            <div class="gallery" id="photo-gallery"></div>
+        </section>
+
+        <section id="videos" class="section" style="display: none;">
+            <h2>Videos</h2>
+            <div class="video-section" id="video-gallery"></div>
+        </section>
+
+        <section id="about" class="section" style="display: none;">
+            <div class="tribute-section">
+                <h2>About Muhammad Asim</h2>
+                <p>Muhammad Asim Chandio is a trailblazer in the realms of information technology and education. As a mastermind in IT, his innovative solutions and technical brilliance have set new standards in the industry. As an educator, his ability to ignite curiosity and foster critical thinking is unmatched, making him a revered mentor to thousands. His visionary leadership, combined with his charismatic personality, has left an indelible mark on everyone fortunate enough to learn from him. Muhammad Asim is not just a teacher; he is a transformative force, shaping the future with his wisdom and genius.</p>
+            </div>
+        </section>
+
+        <section id="upload" class="section" style="display: none;">
+            <div class="upload-section">
+                <h2>Upload Media</h2>
+                <form id="upload-form" onsubmit="handleUpload(event)">
+                    <div class="file-input-wrapper">
+                        <input type="file" id="media" multiple accept="image/*,video/*">
+                        <span class="file-input-label">Choose Files</span>
+                    </div>
+                    <button type="submit">Upload</button>
+                </form>
+                <div id="uploaded-files"></div>
+            </div>
+        </section>
+
+        <section id="notes" class="section" style="display: none;">
+            <div class="notes-section">
+                <h2>Educational Notes</h2>
+                <form id="notes-form" onsubmit="handleNoteSubmit(event)">
+                    <textarea id="note-content" placeholder="Write your educational note here..." required></textarea>
+                    <button type="submit">Post Note</button>
+                </form>
+                <div id="notes-list"></div>
+            </div>
+        </section>
+
+        <section id="admin" class="section" style="display: none;">
+            <div class="admin-section">
+                <h2>Admin Panel</h2>
+                <input type="password" id="admin-password" placeholder="Enter Admin Password">
+                <button onclick="loginAdmin()">Login</button>
+                <div class="admin-content" id="admin-content">
+                    <h3>Uploaded Photos</h3>
+                    <div class="gallery" id="admin-photos"></div>
+                    <h3>Uploaded Videos</h3>
+                    <div class="video-section" id="admin-videos"></div>
+                    <h3>Uploaded Files</h3>
+                    <div id="admin-files"></div>
+                    <h3>Posted Notes</h3>
+                    <div id="admin-notes"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for Full View -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <img id="modal-image" src="" alt="Full Image">
+            <video id="modal-video" controls style="display:none;"></video>
+        </div>
+    </div>
+
+    <a href="#" class="back-to-top" id="back-to-top">↑</a>
+
+    <script>
+        // Store uploaded media and notes
+        let uploadedPhotos = [];
+        let uploadedVideos = [];
+        let uploadedFiles = [];
+        let postedNotes = [];
+
+        // JavaScript for navigation
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Show home section by default
+        showSection('home');
+
+        // Modal Handling
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalVideo = document.getElementById('modal-video');
+        const closeModal = document.getElementsByClassName('close-modal')[0];
+
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+            modalImage.src = "";
+            modalVideo.src = "";
+            modalImage.style.display = "none";
+            modalVideo.style.display = "none";
+            modalVideo.pause(); // Ensure video stops playing
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                modalImage.src = "";
+                modalVideo.src = "";
+                modalImage.style.display = "none";
+                modalVideo.style.display = "none";
+                modalVideo.pause(); // Ensure video stops playing
+            }
+        }
+
+        function openModal(src, type) {
+            modal.style.display = "flex";
+            if (type.startsWith('image/')) {
+                modalImage.src = src;
+                modalImage.style.display = "block";
+                modalVideo.style.display = "none";
+            } else if (type.startsWith('video/')) {
+                modalVideo.src = src;
+                modalVideo.style.display = "block";
+                modalImage.style.display = "none";
+                modalVideo.play(); // Automatically play video
+            }
+        }
+
+        // Upload Form Handling
+        function handleUpload(event) {
+            event.preventDefault();
+            const mediaInput = document.getElementById('media');
+            const photoGallery = document.getElementById('photo-gallery');
+            const videoGallery = document.getElementById('video-gallery');
+            const fileList = document.getElementById('uploaded-files');
+            const files = mediaInput.files;
+
+            if (files.length > 0) {
+                Array.from(files).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const item = document.createElement('div');
+                        item.setAttribute('data-caption', file.name);
+                        item.setAttribute('data-type', file.type);
+                        item.setAttribute('data-src', e.target.result);
+                        if (file.type.startsWith('image/')) {
+                            item.className = 'gallery-item';
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            item.appendChild(img);
+                            item.onclick = () => openModal(e.target.result, file.type);
+                            photoGallery.appendChild(item);
+                            uploadedPhotos.push({ src: e.target.result, name: file.name, type: file.type });
+                        } else if (file.type.startsWith('video/')) {
+                            item.className = 'video-item';
+                            const video = document.createElement('video');
+                            video.src = e.target.result;
+                            video.controls = true;
+                            item.appendChild(video);
+                            item.onclick = () => openModal(e.target.result, file.type);
+                            videoGallery.appendChild(item);
+                            uploadedVideos.push({ src: e.target.result, name: file.name, type: file.type });
+                        }
+                        updateAdminPanel();
+                    };
+                    reader.readAsDataURL(file);
+                });
+                alert('Files uploaded successfully!');
+                mediaInput.value = '';
+            } else {
+                alert('Please select at least one file.');
+            }
+        }
+
+        // Notes Form Handling
+        function handleNoteSubmit(event) {
+            event.preventDefault();
+            const noteContent = document.getElementById('note-content').value;
+            const notesList = document.getElementById('notes-list');
+
+            if (noteContent) {
+                const note = document.createElement('div');
+                note.className = 'note-item';
+                note.textContent = noteContent;
+                notesList.prepend(note);
+                postedNotes.push(noteContent);
+                updateAdminPanel();
+                document.getElementById('notes-form').reset();
+                alert('Note posted successfully!');
+            } else {
+                alert('Please write a note.');
+            }
+        }
+
+        // Admin Login
+        function loginAdmin() {
+            const password = document.getElementById('admin-password').value;
+            if (password === 'Asii') {
+                document.getElementById('admin-content').style.display = 'block';
+                updateAdminPanel();
+            } else {
+                alert('Incorrect password!');
+            }
+        }
+
+        // Update Admin Panel
+        function updateAdminPanel() {
+            const adminPhotos = document.getElementById('admin-photos');
+            const adminVideos = document.getElementById('admin-videos');
+            const adminFiles = document.getElementById('admin-files');
+            const adminNotes = document.getElementById('admin-notes');
+
+            // Clear existing content
+            adminPhotos.innerHTML = '';
+            adminVideos.innerHTML = '';
+            adminFiles.innerHTML = '';
+            adminNotes.innerHTML = '';
+
+            // Populate photos
+            uploadedPhotos.forEach((photo, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.setAttribute('data-caption', photo.name);
+                item.setAttribute('data-type', photo.type);
+                item.setAttribute('data-src', photo.src);
+                const img = document.createElement('img');
+                img.src = photo.src;
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.onclick = () => {
+                    uploadedPhotos.splice(index, 1);
+                    document.querySelector(`#photo-gallery .gallery-item:nth-child(${index + 1})`)?.remove();
+                    updateAdminPanel();
+                };
+                item.appendChild(img);
+                item.appendChild(deleteBtn);
+                item.onclick = () => openModal(photo.src, photo.type);
+                adminPhotos.appendChild(item);
+            });
+
+            // Populate videos
+            uploadedVideos.forEach((video, index) => {
+                const item = document.createElement('div');
+                item.className = 'video-item';
+                item.setAttribute('data-caption', video.name);
+                item.setAttribute('data-type', video.type);
+                item.setAttribute('data-src', video.src);
+                const vid = document.createElement('video');
+                vid.src = video.src;
+                vid.controls = true;
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.onclick = () => {
+                    uploadedVideos.splice(index, 1);
+                    document.querySelector(`#video-gallery .video-item:nth-child(${index + 1})`)?.remove();
+                    updateAdminPanel();
+                };
+                item.appendChild(vid);
+                item.appendChild(deleteBtn);
+                item.onclick = () => openModal(video.src, video.type);
+                adminVideos.appendChild(item);
+            });
+
+            // Populate other files
+            uploadedFiles.forEach((file, index) => {
+                const item = document.createElement('div');
+                item.className = 'file-item';
+                item.setAttribute('data-caption', file.name);
+                item.setAttribute('data-type', file.type);
+                item.setAttribute('data-src', file.src);
+                const link = document.createElement('a');
+                link.href = "#";
+                link.textContent = file.name;
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.onclick = () => {
+                    uploadedFiles.splice(index, 1);
+                    document.querySelector(`#uploaded-files .file-item:nth-child(${index + 1})`)?.remove();
+                    updateAdminPanel();
+                };
+                item.appendChild(link);
+                item.appendChild(deleteBtn);
+                adminFiles.appendChild(item);
+            });
+
+            // Populate notes
+            postedNotes.forEach((note, index) => {
+                const item = document.createElement('div');
+                item.className = 'note-item';
+                item.textContent = note;
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.onclick = () => {
+                    postedNotes.splice(index, 1);
+                    document.querySelector(`#notes-list .note-item:nth-child(${postedNotes.length - index})`)?.remove();
+                    updateAdminPanel();
+                };
+                item.appendChild(deleteBtn);
+                adminNotes.appendChild(item);
+            });
+        }
+
+        // Back-to-Top Button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
